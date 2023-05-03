@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  backend:
+    build: .
+    container_name: backend
+    restart: always
+    expose:
+      - 5000
+    env_file:
+      - .env
+      - web
+networks:
+    web:
+      name: web
+      external: true
